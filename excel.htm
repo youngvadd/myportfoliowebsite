@@ -115,7 +115,9 @@
 }
 
 .dashboard {
+  position: relative;
   display: flex;
+  flex-direction: column;
   justify-content: center;
   align-items: center;
   align-content: center;
@@ -146,6 +148,115 @@
 
 .quiz p {
   font-weight: 200;
+  line-height: 30px;
+}
+
+.steps {
+  margin: 20px;
+}
+
+.steps h3 {
+  margin: 20px;
+}
+
+.steps img {
+  border: .2px solid #4e4e4e05;
+  border-radius: 10px;
+  width: 870px;
+  object-fit: inherit;
+  height: 350px;
+}
+
+.steps-one {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  align-content: center;
+  justify-items: center;
+}
+
+.steps-one a {
+  font-weight: 200;
+  color: #ffffff54;
+  margin: 20px;
+}
+
+.steps p {
+  font-weight: 200;
+  line-height: 30px;
+}
+
+.findings-xl h3 {
+  margin: 20px;
+}
+
+.findings-xl img {
+  border: .2px solid #4e4e4e05;
+  border-radius: 10px;
+  width: 870px;
+  object-fit: inherit;
+  height: 350px;
+  margin-bottom: 20px;
+} 
+
+.findings-xl p {
+  font-weight: 200;
+  line-height: 30px;
+  width: 850px;
+}
+
+.findings-tbl h3 {
+  margin: 30px;
+}
+
+.findings-tbl img {
+  border: .2px solid #4e4e4e05;
+  border-radius: 10px;
+  width: 450px;
+  object-fit: inherit;
+  height: 250px;
+  margin-bottom: 20px;
+}
+
+.findings-tbl p {
+  font-weight: 200;
+  line-height: 30px;
+}
+
+.tbl-one {
+  position: relative;
+  display: flex;
+  flex-direction: row;
+  margin: 30px;
+}
+
+.tbl-one p {
+  margin: 30px;
+  width: 500px;
+}
+
+.tbl-two {
+  position: relative;
+  display: flex;
+  flex-direction: row-reverse;
+  margin: 30px;
+}
+
+.tbl-two p {
+  margin: 30px;
+  width: 500px;
+}
+
+.line {
+  border: .5px #ffffff38 solid;
+  height: .5px;
+  width: 800px;
+  align-self: center;
+  align-items: center;
+  align-content: center;
+  justify-self: center;
 }
 
     </style>
@@ -173,6 +284,105 @@
         <p>2) What are the best and worst performing products?</p>
         <p>3) Which year had the highest sales?</p>
         <p>4) What are the best and worst performing markeying channel?</p>
+       </div>
+
+       <div class="steps">
+        <h3>I took the following steps to create my analysis:</h3>
+        <div class="steps-one">
+        <img src="XL-steps.png">
+        <a>View the excel document</a>
+        </div>
+        <p>1) Pulling data from Gumroad.</p>
+        <p>2) Identifying any duplicates, missing values or inconsistent date format.</p>
+        <p>3) Creating an issue log table recording all issues in the data, magnitude and resolutions.</p>
+        <p>4) Creating a duplicate store data table for a cleaned data table.</p>
+        <p>5) creating pivot tables to aggrigate KPIs.</p>
+        <p>6) Making a deep dive analysis in Tableau.</p>
+       </div>
+
+       <div class="findings">
+
+       <div class="findings-xl">
+        <h3>Analysis from excel insights:</h3>
+        <img src="XL-preview.png">
+        <p>1) Total sales across 2019-2020 is ~ $6.1M Ranging in monthly sales from $80K to $549K (Finance team).</p>
+        <p>2) Best Performing product is Gaming Monitors at $1.9M in total sales and the worst performing is Gaming Headset at $800 (Product team).</p>
+        <p>3) Worst performing product category is Headset which is responsible for 0.01% of sales revenue and Gaming monitors making 32% of sales revenue (Product team).</p>
+        <p>4) December 2020 saw a large spike in sales. Seems like Fall and winter months before the new year perform best. Maybe related to holiday season or promotions at the time (Marketing team).</p>
+        <p>5) All products had a significant spike in sales in 2020 onwords, following the general trend in total sales. This indicates a company-wide  impact ( most likely due to COVID-19) (Finance team).</p>
+        <p>6) Almost all products exhibited a spike in December 2020 - look into promotions or campaigns that happened at this time (Marketing team).</p>
+        <p>7) 2020 the company had 164% increase in sales revenue compared to 2019 sales revenue (Finance team).</p>
+       </div>
+
+       <div class="findings-tbl">
+        <h3>Deep dive analysis from Tableau:</h3>
+
+        <div class="tbl-one">
+          <img src="XL-overallusd.png">
+          <p>Sales more than double in early in 2020, 
+            with all time high in September and December 2020. 
+            Sales significantly dropped in February 2021. 
+            I recommend to do sanity checks on key dimensions 
+            to investigate if there's a clear driver.
+          </p>
+        </div>
+        
+        <div class="line"></div>
+
+        <div class="tbl-two">
+          <img src="XL-Products.png">
+          <p>
+            Gaming monitors, Playstation 5s and Nintendo 
+            Switch are the main drivers of the dip. 
+            They all exhibit the same plateauing behaviour in 2020 and 2021.
+            I recommend to Look into these products by region and marketing channel.
+          </p>
+        </div>
+
+        <div class="line"></div>
+        
+        <div class="tbl-one"> 
+          <img src="XL-marketing.png">
+          <p>
+            Direct is the main driver of sales. All other channels pale in comparison.
+            I recommend to Investigate with  the marketing team on email and social media strategies.
+          </p>
+        </div>
+
+        <div class="line"></div>
+
+        <div class="tbl-two">
+          <img src="XL-region.png">
+          <p>
+            All regions exhibits similar dips in 2021 indicating a global/macro trend. 
+            I recommend to Refer to the product split as the main dimension.
+          </p>
+        </div>
+
+        <div class="line"></div>
+
+        <div class="tbl-one">
+          <img src="XL-productmarket.png">
+          <p>
+            While all three top products exhibits dips in early 2021, 
+            Playstation 5s had a major dip in direct traffic in the 
+            beginning of 2021 compared to other products and marketing channels. 
+            I recommend to Investigate drop in direct Playstation 5s sales in North America.
+          </p>
+        </div>
+
+        <div class="line"></div>
+
+        <div class="tbl-two">
+          <img src="XL-productsregion.png">
+          <p>
+            For Playstation 5s, 
+            the drop is mostly contained to North America region and direct traffic. 
+            This may indicate a shift in trends or copmetitors there.
+          </p>
+        </div>
+
+       </div>
        </div>
      </section>
     </main>
