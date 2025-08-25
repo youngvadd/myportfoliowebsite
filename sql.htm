@@ -17,7 +17,7 @@
     font-family: "poppins" , sans-serif;
     font-weight: 600;
     font-style: normal;
-   /* color: #ffffff;*/
+    color: #ffffff;
   }
 
   body {
@@ -113,6 +113,118 @@
   transform: scale(.9);
 }
 
+.dashboard {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  align-content: center;
+  justify-items: center;
+  margin: 20px;
+}
+
+.dashboard img {
+  border: .2px solid #4e4e4e05;
+  border-radius: 10px;
+  width: 800px;
+  object-fit: cover;
+  height: 480px;
+}
+
+.intro {
+  margin: 20px;
+}
+
+.intro p {
+  font-weight: 80;
+  color: #ffffff57;
+}
+
+.quiz h3 {
+  margin: 5px;
+}
+
+.quiz p {
+  font-weight: 200;
+  line-height: 30px;
+}
+
+.steps {
+  margin: 20px;
+}
+
+.steps h3 {
+  margin: 0px;
+}
+
+.steps img {
+  border: .2px solid #4e4e4e05;
+  border-radius: 10px;
+  width: 770px;
+  height: 450px;
+  object-fit: inherit;
+  margin: 20px;
+}
+
+.steps-one {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  align-content: center;
+  justify-items: center;
+}
+
+.steps-one a {
+  font-weight: 200;
+  color: #ffffff54;
+  margin: 20px;
+}
+
+.steps p {
+  font-weight: 200;
+  line-height: 30px;
+}
+
+.findings h3 {
+  margin: 20px;
+}
+
+.findings img {
+  border: .2px solid #4e4e4e05;
+  border-radius: 10px;
+  width: 550px;
+  height: 260px;
+  object-fit: inherit;
+  margin-bottom: 20px;
+} 
+
+.findings-img {
+  position: relative;
+  display: flex;
+  flex-direction: row;
+  align-content: center;
+  justify-content: center;
+  gap: 10px;
+}
+
+.findings p {
+  font-weight: 200;
+  line-height: 30px;
+  width: 850px;
+}
+
+p {
+  margin-left: 20px;
+}
+
+h3 {
+  margin-left: 20px;
+}
+
+
     </style>
 
     <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
@@ -123,12 +235,71 @@
     </header>
     <main>
      <section>
+       <h1 style="color: #ffffff; font-size: 40px;">SQL <span style="-webkit-text-stroke: .7px #ffffff; color: transparent;">Project</span></h1>
+       <div class="dashboard">
+         <img src="SQL-dashboard.png">
+         <div class="intro">
+           <p>This project looks at product performance during 2022 and 2024 period from PixelPulse store dataset.</p>
+         </div>
+       </div>
+
+       <div class="quiz">
+        <h3>Here are the questions I was interested in answering:</h3>
+        <p>1) How does our pricing compare to competitors across different stores and time periods?</p>
+        <p>2) Are there seasonal or cyclical patterns in pricing behavior?</p>
+        <p>3) Which store maintains the strongest competitive pricing advantage?</p>
+        <p>4) Do pricing changes correlate with shifts in sales volume or customer behavior?</p>
+       </div>
+
+        <div class="steps">
+        <h3>I took the following steps to create my analysis:</h3>
+        <div class="steps-one">
+        <img src="SQL-query.png">
+        <a href="https://docs.google.com/spreadsheets/d/1tmpQ4sbdwqKYMad0SdNRWBSZHJ-p6VNS/edit?usp=drive_link&ouid=107201093699550857106&rtpof=true&sd=true">Download the SQL document</a>
+        </div>
+        <p>1) Pulling data from Gumroad.</p>
+        <p>2) Identifying any duplicates, missing values or inconsistent date format.</p>
+        <p>3) Filtering tables to aggrigate KPIs.</p>
+        <p>4) Making a deep dive analysis in PowerBi.</p>
+       </div>
+
+        <div class="findings">
+        <h3>Analysis:</h3>
+        <div class="findings-img">
+          <img src="SQL-competitorpricing.png">
+          <img src="SQL-seasons.png">
+        </div>
+        <p>1) 
+          The Total Sales chart from 2022 to 2024 reveals cyclical performance with peaks in August 2022, and a dip in early 2023. 
+          Sales show recovery post- March 2023, suggesting stabilization (Finance team).
+        </p>
+        <p>2) 
+          The horizontal bar chart compares demand and product sold across 5 categories, showing perfect alignment in all cases.
+          Groceries lead with 1.52M units, followed by Clothing .(Product team).</p>
+        <p>3) 
+          The lowest-performing category in  was electronics, with only 0.16M units sold and demanded. 
+          This suggests minimal market interest or possible oversupply. 
+          Recommend a targeted review of the lowest performing category to uncover pricing, product fit, or visibility issues, 
+          and test strategic adjustments to improve traction.(Product team).
+        </p>
+        <p>4) 
+          Groceries dominate sales across all seasons and regions, peaking in Summer. 
+          Clothing and Toys consistently underperform, with Winter showing the lowest figures. 
+          Regional differences are subtle, though the South leads slightly. (Marketing team).
+        </p>
+        <p>5) 
+          Across all four stores, our pricing closely tracks competitor rates, with occasional undercuts and alignment. 
+          A notable dip in January 2023 suggests strategic discounting. Store S003 maintains the most competitive edge, 
+          while S001 shows minimal price differentiation. (Product team).
+        </p>
+       
+       </div>
 
      </section>
     </main>
     <footer class="footer">
       <div class="footer-text">
-        <p>Copyright &copy; 2023 by Eliazer Kubya | All Rights Reserved.</p>
+        <p>Copyright &copy; 2024 by Eliazer Kubya | All Rights Reserved.</p>
       </div>
       <div class="footer-iconTop">
         <a href="index.htm#portfolio" class="button">Back</a>
